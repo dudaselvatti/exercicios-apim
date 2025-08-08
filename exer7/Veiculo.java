@@ -1,10 +1,6 @@
-public class exer7 {
-    public static void main(String[] args) {
-        
-     }
-}
+package exer7;
 
-class Veiculo {
+public class Veiculo {
     private String marca;
     private String modelo;
 
@@ -26,7 +22,3 @@ class Veiculo {
         return "Marca: " + marca + ", Modelo: " + modelo;
     }
 }
-
-/*class Carro extends Veiculo {
-
-}*/
