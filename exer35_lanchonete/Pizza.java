@@ -20,6 +20,7 @@ public class Pizza extends Prato {
     @Override
     public double calcularPreco() {
         double preco = getPreco();
+        //fiz essa lógica de preços simplesmente por testes e etc mas sla se faz sentido kkkkjkkkk
         //se o molho for "tomate", adiciona R$ 1,00, se for "branco", adiciona R$ 0,50
         if ("tomate".equalsIgnoreCase(molhopizza)) {
             preco += 1.0; 

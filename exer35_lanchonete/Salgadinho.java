@@ -21,7 +21,7 @@ public class Salgadinho extends Prato {
     @Override
     public double calcularPreco() {
         double preco = getPreco();
-        //fiz essa lógica de preços simplesmente por testes e etc mas sla se faz sentido kkkkjkkkk
+        //fiz essa lógica de preços simplesmente por testes e etc mas sla se faz sentido kkkkjkkkkk
         //se o tipo for "frito", adiciona R$ 1,00, se for "assado", adiciona R$ 0,50
         if ("frito".equalsIgnoreCase(tipo)) {
             preco += 1.0; 

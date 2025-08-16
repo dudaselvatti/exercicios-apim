@@ -21,6 +21,7 @@ public class Lanche extends Prato {
     @Override
     public double calcularPreco() {
         double preco = getPreco();
+        //fiz essa lógica de preços simplesmente por testes e etc mas sla se faz sentido kkkkjkkkk
         //se o pão for "francês", adiciona R$ 0,50, se for "de forma", não adiciona nada
         if ("francês".equalsIgnoreCase(pao)) {
             preco += 0.5;
