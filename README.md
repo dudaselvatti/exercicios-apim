@@ -1,7 +1,7 @@
 # Exercícios de GRUAPIM - APIs e Microserviços 2025.2
 
 Repositório contendo os exercícios da disciplina **GRUAPIM - APIs e Microserviços** do semestre 2025.2, ministrada pelo professor **Giovani Disperati**.
-Aluna: **Maria Eduarda Alves Selvatti**, Engenharia da Computação, 6º semestre. 
+- Aluna: **Maria Eduarda Alves Selvatti**, Engenharia da Computação, 6º semestre. 
 
 ## Conteúdo do repositório
 
