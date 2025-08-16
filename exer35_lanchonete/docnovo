@@ -1,0 +1,60 @@
+@startuml diagclasslanch
+
+abstract class Prato {
+    - preco: double
+    - peso: double
+    - dataValidade: String
+    + Prato(preco: double, peso: double, dataValidade: String)
+    + getPreco(): double
+    + getPeso(): double
+    + getDataValidade(): String
+    + calcularPreco(): double
+    + toString(): String
+}
+
+class Lanche {
+    - pao: String
+    - recheio: String
+    - molho: String
+    + Lanche(pao: String, recheio: String, molho: String)
+    + calcularPreco(): double
+    + toString(): String
+}
+
+class Pizza {
+    - molho: String
+    - borda: String
+    - sabor: String
+    + Pizza(molho: String, borda: String, sabor: String)
+    + calcularPreco(): double
+    + toString(): String
+}
+
+class Salgadinho {
+    - massa: String
+    - tipo: String
+    - recheio: String
+    + Salgadinho(massa: String, tipo: String, recheio: String)
+    + calcularPreco(): double
+    + toString(): String
+}
+
+class Pedido {
+    - nomeCliente: String
+    - taxaServico: double
+    - itensConsumidos: ArrayList<Prato>
+    + Pedido(nomeCliente: String, taxaServico: double)
+    + adicionarItem(prato: Prato): void
+    + calcularTotal(): double
+    + calcularTroco(valorPago: double): double
+    + mostrarFatura(): void
+    + toString(): String
+}
+
+Prato <|-- Lanche
+Prato <|-- Pizza
+Prato <|-- Salgadinho
+
+Pedido "1" *-- "*" Prato : contém
+
+@enduml

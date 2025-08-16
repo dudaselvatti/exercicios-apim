@@ -1,0 +1,2 @@
+O protótipo do sistema da lanchonete utiliza herança e polimorfismo, com a classe abstrata Prato definindo atributos comuns e o método calcularPreco(). As classes Lanche, Pizza e Salgadinho herdam de Prato e implementam regras próprias de preço. A classe Pedido gerencia os itens consumidos por array, calcula total, troco e gera a fatura.
+A interface de console na classe Teste permite criar pedidos, visualizar o cardápio e finalizar compras, garantindo flexibilidade e fácil manutenção do sistema
