@@ -1,22 +1,29 @@
 package exer_classabstrata;
 
-import java.util.ArrayList;
-
 public class CadastroDePessoas {
-    public int qtdAtual;
 
-    ArrayList<Pessoa> pessoas = new ArrayList<>();
+    public int qtdAtual;
+    private Pessoa[] pessoas;
+
+    public CadastroDePessoas(int tamanho) {
+        pessoas = new Pessoa[tamanho];
+        qtdAtual = 0;
+    }
 
     public void cadastraPessoa(Pessoa pessoa) {
-        
-        pessoas.add(pessoa);
-        qtdAtual++;
-        System.out.println("Pessoa cadastrada: " + pessoa.getNome());
+        if (qtdAtual < pessoas.length) {
+            pessoas[qtdAtual] = pessoa;
+            qtdAtual++;
+        } else {
+            System.out.println("Cadastro cheio!");
+        }
     }
 
     public void imprimeCadastro() {
-        for (Pessoa p : pessoas) {
-            p.imprimirDados();
+        System.out.println("\n--- RELATÓRIO DE CADASTRO ---");
+        for (int i = 0; i < this.qtdAtual; i++) {
+            pessoas[i].imprimirDados();
+            System.out.println("--------------------");
         }
     }
 }

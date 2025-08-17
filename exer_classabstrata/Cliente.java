@@ -4,10 +4,9 @@ public class Cliente extends Pessoa {
     
     public int codigo;
 
-    public Cliente(int codigo, String nome, Data dataNasc) {
+    public Cliente(String nome, Data dataNasc, int codigo) {
+        super(nome, dataNasc);
         this.codigo = codigo;
-        this.nome = nome;
-        this.dataNasc = dataNasc;
     }
 
     @Override
