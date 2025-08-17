@@ -1,0 +1,76 @@
+@startuml diagramaclass
+
+class Cliente {
+        <<Abstract>>
+        - nome : String
+        - email : String
+        - contas : List~Conta~
+        + adicionarConta(c : Conta)
+    }
+
+    class PessoaFisica {
+        - cpf : String
+    }
+
+    class PessoaJuridica {
+        - cnpj : String
+    }
+
+    class Conta {
+        <<Abstract>>
+        - numero : String
+        - saldo : double
+        + calcularRendimento(dias : int) : double
+    }
+
+    class Tributavel {
+        <<Interface>>
+        + calcularTaxaServico(rendimentoBruto : double) : double
+    }
+
+    class ContaCorrente {
+        + calcularRendimento(dias : int) : double
+    }
+
+    class ContaCDI {
+        + calcularRendimento(dias : int) : double
+        + calcularTaxaServico(rendimentoBruto : double) : double
+    }
+
+    class ContaInvestimento {
+        - carteira : List~ProdutoInvestimento~
+        + calcularRendimento(dias : int) : double
+        + calcularTaxaServico(rendimentoBruto : double) : double
+    }
+
+    class ProdutoInvestimento {
+        <<Abstract>>
+        - nome : String
+        - descricao : String
+    }
+
+    class RendaFixa {
+        - rendimentoMensal : double
+        - periodoCarenciaDias : int
+    }
+
+    class RendaVariavel {
+        - rendimentoMensalEsperado : double
+    }
+
+    Cliente <|-- PessoaFisica
+    Cliente <|-- PessoaJuridica
+    
+    Conta <|-- ContaCorrente
+    Conta <|-- ContaCDI
+    Conta <|-- ContaInvestimento
+
+    Tributavel <|.. ContaCDI
+    Tributavel <|.. ContaInvestimento
+
+    ProdutoInvestimento <|-- RendaFixa
+    ProdutoInvestimento <|-- RendaVariavel
+
+    Cliente "1" *-- "1..*" Conta : possui (Composição)
+    ContaInvestimento "1" o-- "0..*" ProdutoInvestimento : investe em (Agregação)
+@enduml

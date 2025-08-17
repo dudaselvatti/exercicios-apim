@@ -1,9 +1,11 @@
 public abstract class Conta {
 
     private double saldo;
+    private Cliente donoDaConta;
 
-    public Conta(double saldo) {
+    public Conta(double saldo, Cliente donoDaConta) {
         this.saldo = saldo;
+        this.donoDaConta = donoDaConta;
     }
 
     public double getSaldo() {
@@ -14,6 +16,6 @@ public abstract class Conta {
         this.saldo = saldo;
     }
 
-    public abstract void calcularRendimento();
+    public abstract double calcularRendimento(int dias);
 
 }

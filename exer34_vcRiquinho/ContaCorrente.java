@@ -1,22 +1,12 @@
 public class ContaCorrente extends Conta {
 
-    private String agencia;
-
-    public ContaCorrente(double saldo, String agencia) {
-        super(saldo);
-        this.agencia = agencia;
-    }
-
-    public String getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(String agencia) {
-        this.agencia = agencia;
+    public ContaCorrente(double saldo, Cliente donoDaConta) {
+        super(saldo, donoDaConta);
     }
 
     @Override
-    public void calcularRendimento() {
-        // Implementar cálculo de rendimento para conta corrente
+    public double calcularRendimento(int dias) {
+        double rendimentoBruto = 0;
+        return rendimentoBruto; //conta corrente não tem rendimento tlgd
     }
 }

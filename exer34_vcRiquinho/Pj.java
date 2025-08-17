@@ -1,9 +1,11 @@
-public class Pj extends Cliente {
+import java.util.ArrayList;
+
+public class PJ extends Cliente {
 
     private String cnpj;
 
-    public Pj(String nome, String email, String cnpj) {
-        super(nome, email);
+    public PJ(String nome, String email, ArrayList<Conta> contas, String cnpj) {
+        super(nome, email, contas);
         this.cnpj = cnpj;
     }
 
@@ -13,5 +15,9 @@ public class Pj extends Cliente {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    public void criarConta(){
+        
     }
 }

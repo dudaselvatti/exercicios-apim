@@ -1,9 +1,11 @@
-public class Pf extends Cliente {
+import java.util.ArrayList;
+
+public class PF extends Cliente {
     
     private String cpf;
 
-    public Pf(String nome, String email, String cpf) {
-        super(nome, email);
+    public PF(String nome, String email, ArrayList<Conta> contas, String cpf){
+        super(nome, email, contas);
         this.cpf = cpf;
     }
 
@@ -13,5 +15,9 @@ public class Pf extends Cliente {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public void criarConta(){
+        
     }
 }
