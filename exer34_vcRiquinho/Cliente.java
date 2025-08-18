@@ -1,14 +1,15 @@
 import java.util.ArrayList;
+import java.util.List;
 public abstract class Cliente {
     
     private String nome;
     private String email;
-    private ArrayList<Conta> contas;
+    private List<Conta> contas;
 
-    public Cliente(String nome, String email, ArrayList<Conta> contas) {
+    public Cliente(String nome, String email) {
         this.nome = nome;
         this.email = email;
-        this.contas = contas;
+        this.contas = new ArrayList<>();
     }
 
     public String getNome() {
@@ -27,8 +28,18 @@ public abstract class Cliente {
         this.email = email;
     }
 
-    public void criarConta(){
-
+    public void adicionarConta(Conta novaConta){
+        this.contas.add(novaConta);
     }
+
+    public boolean removerConta(Conta conta){
+        return this.contas.remove(conta);
+    }
+
+    public List<Conta> getContas() {
+        return this.contas;
+    }
+
+
 
 }

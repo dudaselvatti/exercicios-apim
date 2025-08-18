@@ -1,7 +1,7 @@
 public class ContaCorrente extends Conta {
 
-    public ContaCorrente(double saldo, Cliente donoDaConta) {
-        super(saldo, donoDaConta);
+    public ContaCorrente(Cliente donoDaConta) {
+        super(donoDaConta);
     }
 
     @Override
