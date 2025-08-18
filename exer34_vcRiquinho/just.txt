@@ -1,2 +1,4 @@
 No protótipo VcRiquinho procurei aplicar os conceitos de Programação Orientada a Objetos. Usei Herança para evitar repetição de atributos, Polimorfismo para simplificar os cálculos de rendimento e Encapsulamento para garantir a segurança dos dados, sem permitir mudanças diretas no saldo.
 Também usei a Interface Tributavel para separar contas com e sem taxas. Já as funções de interação com o usuário, como listar e cadastrar, foram implementadas com uma estrutura de menus baseada em switch. Esta abordagem foi escolhida por sua clareza, simplicidade e adequação ao escopo de um protótipo de console, organizando cada ação em um método específico e tornando o fluxo do programa fácil de acompanhar.
+Infelizmente também esbarramos no obstáculo do jargão financeiro e de noções mínimas - ou inexistentes - acerca dos assuntos, o que dificultou o desenvolvimento do sistema.
+

@@ -19,6 +19,7 @@ public class Teste {
             System.out.println("1 - Gerenciar Cliente");
             System.out.println("2 - Gerenciar Produtos Financeiros");
             System.out.println("3 - Simular Rendimento");
+            //System.out.println("4 - Simular Produto Financeiro");
             System.out.println("Selecione uma das opcoes: ");
 
             opcao = leitor.nextInt();
@@ -37,6 +38,9 @@ public class Teste {
                     simularRendimento(leitor);
                     break;
 
+                //case 4:
+                    //simularProdutoFinanceiro(leitor);
+                    //break;
                 default:
                     System.out.println("Saindo...");
                     opcao = 0;
@@ -63,6 +67,7 @@ public class Teste {
             System.out.println("4 - Abrir Nova Conta para Cliente");
             System.out.println("5 - Fechar Conta de Cliente");
             System.out.println("6 - Remover Cliente");
+            System.out.println("7 - Depositar na Conta de Cliente");
             System.out.print("Selecione uma das opcoes: ");
 
             opcaoCliente = leitor.nextInt();
@@ -86,6 +91,9 @@ public class Teste {
                     break;
                 case 6:
                     removerCliente(leitor, clientes);
+                    break;
+                case 7:
+                    depositar(leitor, clientes);
                     break;
                 case 0:
                     System.out.println("Voltando ao menu principal...");
@@ -537,6 +545,62 @@ public class Teste {
         System.out.println("  -----------------------------------");
     }
 
+    public static void depositar(Scanner leitor, List<Cliente> clientes) {
+
+        System.out.println("\n--- Depositar ---");
+
+        if (clientes.isEmpty()) {
+            System.out.println("Nenhum cliente cadastrado no sistema.");
+            return;
+        }
+
+        System.out.println("Clientes disponíveis:");
+
+        listarClientes(clientes);
+
+        try {
+            System.out.print("\nDigite o índice do cliente que receberá o depósito: ");
+            int indexCliente = leitor.nextInt();
+            leitor.nextLine(); 
+
+            if (indexCliente < 0 || indexCliente >= clientes.size()) {
+                System.out.println("Índice de cliente inválido!");
+                return;
+            }
+
+            Cliente clienteSelecionado = clientes.get(indexCliente);
+            List<Conta> contasDoCliente = clienteSelecionado.getContas(); 
+
+            System.out.println("\nContas do cliente " + clienteSelecionado.getNome() + ":");
+            for (int i = 0; i < contasDoCliente.size(); i++) {
+                System.out.println("[" + i + "]"  + " - " + contasDoCliente.get(i).toString());
+            }
+
+            System.out.print("Selecione o índice da conta para depositar: ");
+            int indexConta = leitor.nextInt();
+            leitor.nextLine();
+
+            if (indexConta < 0 || indexConta >= contasDoCliente.size()) {
+                System.out.println("Índice de conta inválido!");
+                return;
+            }
+
+            Conta contaSelecionada = contasDoCliente.get(indexConta);
+
+            System.out.print("\nDigite o valor a ser depositado: R$ ");
+            double valor = leitor.nextDouble();
+            leitor.nextLine();
+
+            contaSelecionada.depositar(valor);
+
+            System.out.println("\nDepósito de R$ " + valor + " realizado com sucesso na " + contaSelecionada.toString() + " de " + clienteSelecionado.getNome() + ".");
+
+        } catch (java.util.InputMismatchException e) { 
+            System.out.println("Erro: Entrada inválida. Por favor, digite um número.");
+            leitor.nextLine(); 
+        }
+}
+
 
     public static void gerenciarProdutosFinanceiros(Scanner leitor){
         
@@ -744,6 +808,10 @@ public class Teste {
         } catch (Exception e) {
             System.out.println("Erro ao excluir o produto: " + e.getMessage());
         }
+    }
+
+    public static void simularProdutoFinanceiro(Scanner leitor){
+        //nao conseguimos fazer somos burrinhos e nao entendemos o que deveriamos fazer :c
     }
 }
                 
